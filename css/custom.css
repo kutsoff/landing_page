@@ -1,0 +1,80 @@
+/* Inter font - локальная версия */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    src: url('fonts/Inter-Light.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/Inter-Regular.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    src: url('fonts/Inter-Medium.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    src: url('fonts/Inter-SemiBold.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    src: url('fonts/Inter-Bold.woff2') format('woff2');
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Custom styles */
+@layer components {
+    .nav-link {
+        @apply relative px-4 py-2 font-medium transition-all duration-300;
+    }
+    .nav-link::after {
+        @apply content-[''] absolute bottom-0 left-1/2 w-0 h-0.5 bg-current transition-all duration-300;
+        transform: translateX(-50%);
+    }
+    .nav-link:hover::after {
+        @apply w-full;
+    }
+    .section-card {
+        @apply bg-white rounded-xl shadow-xl p-8 mb-8 transform transition-all duration-500 hover:shadow-2xl hover:-translate-y-1;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Font Awesome icons as classes */
+.icon-arrow-down::before { content: "\f063"; }
+.icon-git::before { content: "\f1d3"; }
+.icon-git-alt::before { content: "\f841"; }
+.icon-check-circle::before { content: "\f058"; }
+.icon-map-marker-alt::before { content: "\f3c5"; }
+.icon-phone-alt::before { content: "\f879"; }
+.icon-envelope::before { content: "\f0e0"; }
+.icon-twitter::before { content: "\f099"; }
+.icon-facebook-f::before { content: "\f39e"; }
+.icon-linkedin-in::before { content: "\f0e1"; }
+.icon-github::before { content: "\f09b"; }
+
+/* Font Awesome base styles */
+[class^="icon-"], [class*=" icon-"] {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
